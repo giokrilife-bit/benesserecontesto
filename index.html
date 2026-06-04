@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condominio+ | L'Arte dell'Abitare Insieme</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    },
+                    animation: {
+                        'pulse-subtle': 'pulseSubtle 3s infinite ease-in-out',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseSubtle: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.02)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Top Navigation / Brand Bar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-brand-600 to-accent-500 text-white p-2.5 rounded-xl shadow-md shadow-brand-100">
+                    <i class="fa-solid fa-building-circle-check text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-brand-900 to-brand-700 bg-clip-text text-transparent">Condominio<span class="text-accent-500">+</span></span>
+                    <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-none">GiOKri Life</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#contatti" class="hidden sm:inline-flex items-center space-x-1.5 text-sm font-semibold text-brand-700 hover:text-brand-900 transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Richiedi Info</span>
+                </a>
+                <a href="#maturity-section" class="bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow-sm shadow-brand-100 transition-all duration-200">
+                    Test Condominio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Intro Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-slate-50 py-16 sm:py-24">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-30">
+            <div class="absolute top-10 right-10 w-72 h-72 bg-accent-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-80 h-80 bg-brand-600 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-100 text-brand-800 mb-6 uppercase tracking-wider">
+                <i class="fa-solid fa-sparkles mr-1.5 text-accent-500"></i> La Nuova Visione Dell'Abitare
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-none mb-6 max-w-4xl mx-auto">
+                Amministrare oggi significa <br>
+                <span class="bg-gradient-to-r from-brand-600 via-brand-700 to-accent-600 bg-clip-text text-transparent">valorizzare il futuro comune.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed mb-10">
+                Molto più che garantire il corretto funzionamento dell'edificio. Contribuiamo alla qualità dell'abitare, alla tutela del patrimonio immobiliare e al benessere delle persone che vivono quotidianamente quel contesto.
+            </p>
+
+            <!-- Quick Cards Group -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-12 text-left">
+                <!-- Card 1 -->
+                <div class="bg-white/80 backdrop-blur border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-gem text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Più Valore Reale</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Un condominio organizzato ed efficiente sviluppa una migliore reputazione e una percezione di valore più elevata.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white/80 backdrop-blur border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-leaf text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Sostenibilità & Costi</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Iniziative orientate alla riduzione degli sprechi energetici riducono l'impatto ambientale e alleggeriscono le spese.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white/80 backdrop-blur border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-users text-lg"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Comunità & Serenità</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        I servizi pensati per i residenti favoriscono lo sviluppo di una comunità più coesa, sicura e proiettata al futuro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Pillars Section -->
+    <section class="py-16 sm:py-24 bg-white" id="pilastri-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    I 4 Pilastri di <span class="text-brand-600">Condominio+</span>
+                </h2>
+                <p class="text-slate-500 mt-4">
+                    La nostra visione protettiva ed evolutiva si articola su quattro aree sinergiche della vita condominiale. Seleziona una scheda per scoprirne l'impatto.
+                </p>
+            </div>
+
+            <!-- Pillars Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <!-- Pillar 1 -->
+                <button onclick="selectPillar('economico')" id="btn-economico" class="pillar-btn group text-left p-6 rounded-2xl border-2 border-slate-100 bg-slate-50 hover:bg-brand-50/50 hover:border-brand-500/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-chart-line text-lg"></i>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Area Uno</span>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-950">Economica</h3>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Ottimizzazione delle spese, controllo rigoroso e monitoraggio costante dei bilanci.</p>
+                </button>
+
+                <!-- Pillar 2 -->
+                <button onclick="selectPillar('energetico')" id="btn-energetico" class="pillar-btn group text-left p-6 rounded-2xl border-2 border-slate-100 bg-slate-50 hover:bg-accent-50/50 hover:border-accent-500/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-accent-100 text-accent-600 flex items-center justify-center group-hover:bg-accent-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-bolt text-lg"></i>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Area Due</span>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-accent-950">Energetica</h3>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Strategie integrate per ridurre gli sprechi e traghettare il condominio verso la transizione ecologica.</p>
+                </button>
+
+                <!-- Pillar 3 -->
+                <button onclick="selectPillar('assicurativo')" id="btn-assicurativo" class="pillar-btn group text-left p-6 rounded-2xl border-2 border-slate-100 bg-slate-50 hover:bg-sky-50/50 hover:border-sky-500/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Area Tre</span>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-sky-950">Assicurativa</h3>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Coperture precise e aggiornate a tutela del fabbricato e del patrimonio privato dei singoli.</p>
+                </button>
+
+                <!-- Pillar 4 -->
+                <button onclick="selectPillar('sociale')" id="btn-sociale" class="pillar-btn group text-left p-6 rounded-2xl border-2 border-slate-100 bg-slate-50 hover:bg-rose-50/50 hover:border-rose-500/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-handshake-angle text-lg"></i>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                    <span class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Area Quattro</span>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-rose-950">Sociale</h3>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Creazione di valore aggiunto mediante servizi dedicati, solidarietà e cura della comunità.</p>
+                </button>
+            </div>
+
+            <!-- Focus Content Panel -->
+            <div class="bg-gradient-to-tr from-slate-900 to-brand-950 rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden shadow-xl shadow-slate-200">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-2xl"></div>
+                
+                <!-- Dynamic Content Container -->
+                <div id="pillar-content-display">
+                    <!-- Default loaded state is 'economico' -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-6">
+                            <div class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30">
+                                PILASTRO ECONOMICO
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                                Gestione Trasparente e Controllo Attivo dei Costi
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                                Un bilancio condominiale non deve essere solo un foglio di calcolo, ma una radiografia chiara e leggibile dell'efficienza dell'edificio. Ottimizzare non significa tagliare i servizi, ma eliminare le inefficienze amministrative e rinegoziare i contratti di fornitura in modo strategico.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center space-x-2 text-sm text-slate-200">
+                                    <i class="fa-solid fa-circle-check text-accent-500"></i>
+                                    <span>Trasparenza contabile digitale accessibile 24/7.</span>
+                                </li>
+                                <li class="flex items-center space-x-2 text-sm text-slate-200">
+                                    <i class="fa-solid fa-circle-check text-accent-500"></i>
+                                    <span>Audit periodico delle voci di spesa ricorrenti.</span>
+                                </li>
+                                <li class="flex items-center space-x-2 text-sm text-slate-200">
+                                    <i class="fa-solid fa-circle-check text-accent-500"></i>
+                                    <span>Garanzia di pianificazione pluriennale per evitare spese impreviste.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 space-y-4">
+                            <h4 class="text-sm font-semibold text-brand-300 uppercase tracking-wider">Cosa Ottieni</h4>
+                            <div class="flex items-start space-x-4">
+                                <div class="p-2.5 rounded-lg bg-emerald-500/20 text-emerald-400 mt-1">
+                                    <i class="fa-solid fa-piggy-bank"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white text-base">Risparmio sul lungo periodo</h5>
+                                    <p class="text-xs text-slate-300 mt-1">Sprechi ridotti al minimo e investimenti intelligenti che mantengono o aumentano il valore dell'immobile.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 border-t border-white/10 pt-4">
+                                <div class="p-2.5 rounded-lg bg-sky-500/20 text-sky-400 mt-1">
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white text-base">Nessuna Sorpresa</h5>
+                                    <p class="text-xs text-slate-300 mt-1">Tutte le informazioni, i contratti e le fatture sono tracciate e disponibili in tempo reale per tutti i condomini.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Condo Self-Assessment Simulator -->
+    <section class="py-16 sm:py-24 bg-slate-50 border-t border-slate-100" id="maturity-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 sm:p-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-accent-500/5 rounded-full blur-xl pointer-events-none"></div>
+                
+                <div class="text-center mb-8">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-accent-100 text-accent-800 uppercase tracking-wider">
+                        Strumento Interattivo
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
+                        Test di Maturità del Tuo Condominio
+                    </h3>
+                    <p class="text-sm text-slate-500 mt-2">
+                        Seleziona le voci che rispecchiano lo stato attuale del tuo stabile e scopri se è pronto per il futuro.
+                    </p>
+                </div>
+
+                <!-- Interactive Checklist -->
+                <div class="space-y-4 mb-8">
+                    <label class="flex items-start p-4 bg-slate-50 hover:bg-slate-100/70 rounded-xl cursor-pointer transition-all border border-slate-100 select-none">
+                        <input type="checkbox" onchange="calculateMaturity()" value="20" class="condo-checkbox w-5 h-5 text-brand-600 border-slate-300 rounded focus:ring-brand-500 mt-1 mr-3">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm sm:text-base">Trasparenza Amministrativa Digitale</span>
+                            <span class="block text-xs text-slate-500 mt-0.5">I condomini hanno accesso immediato online a fatture, preventivi e documenti senza doverli richiedere manualmente.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start p-4 bg-slate-50 hover:bg-slate-100/70 rounded-xl cursor-pointer transition-all border border-slate-100 select-none">
+                        <input type="checkbox" onchange="calculateMaturity()" value="20" class="condo-checkbox w-5 h-5 text-brand-600 border-slate-300 rounded focus:ring-brand-500 mt-1 mr-3">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm sm:text-base">Efficienza Energetica Strutturale</span>
+                            <span class="block text-xs text-slate-500 mt-0.5">Presenza di cappotto termico, infissi moderni, illuminazione LED intelligente o impianto fotovoltaico comune.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start p-4 bg-slate-50 hover:bg-slate-100/70 rounded-xl cursor-pointer transition-all border border-slate-100 select-none">
+                        <input type="checkbox" onchange="calculateMaturity()" value="20" class="condo-checkbox w-5 h-5 text-brand-600 border-slate-300 rounded focus:ring-brand-500 mt-1 mr-3">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm sm:text-base">Tutela Assicurativa Completa e Aggiornata</span>
+                            <span class="block text-xs text-slate-500 mt-0.5">La polizza globale fabbricati viene regolarmente rivista e adeguata ai reali costi di ricostruzione e rischi attuali.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start p-4 bg-slate-50 hover:bg-slate-100/70 rounded-xl cursor-pointer transition-all border border-slate-100 select-none">
+                        <input type="checkbox" onchange="calculateMaturity()" value="20" class="condo-checkbox w-5 h-5 text-brand-600 border-slate-300 rounded focus:ring-brand-500 mt-1 mr-3">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm sm:text-base">Attenzione al Sociale e Servizi di Comunità</span>
+                            <span class="block text-xs text-slate-500 mt-0.5">Esistono canali di comunicazione fluidi (es. app, portali), bacheche digitali o servizi collaborativi tra vicini.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start p-4 bg-slate-50 hover:bg-slate-100/70 rounded-xl cursor-pointer transition-all border border-slate-100 select-none">
+                        <input type="checkbox" onchange="calculateMaturity()" value="20" class="condo-checkbox w-5 h-5 text-brand-600 border-slate-300 rounded focus:ring-brand-500 mt-1 mr-3">
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm sm:text-base">Manutenzione Preventiva Programmata</span>
+                            <span class="block text-xs text-slate-500 mt-0.5">Esiste un piano pluriennale di manutenzioni per evitare l'insorgere improvviso di danni costosi e urgenti.</span>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Progress Score Display -->
+                <div class="bg-gradient-to-br from-slate-50 to-brand-50/50 rounded-2xl p-6 border border-brand-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="space-y-1 text-center sm:text-left">
+                        <h4 class="font-bold text-slate-900 text-lg">Punteggio del Tuo Condominio</h4>
+                        <p id="score-description" class="text-sm text-slate-500 leading-normal max-w-sm">Seleziona le opzioni soprastanti per calcolare lo stato del tuo condominio.</p>
+                    </div>
+                    <div class="relative flex items-center justify-center">
+                        <!-- Progress Circle -->
+                        <svg class="w-28 h-28 transform -rotate-90">
+                            <circle cx="56" cy="56" r="48" stroke="#e2e8f0" stroke-width="8" fill="transparent" />
+                            <circle id="progress-circle" cx="56" cy="56" r="48" stroke="#2563eb" stroke-width="8" fill="transparent" stroke-dasharray="301.6" stroke-dashoffset="301.6" stroke-linecap="round" class="transition-all duration-500" />
+                        </svg>
+                        <div class="absolute text-center">
+                            <span id="score-percentage" class="text-2xl font-black text-slate-900 leading-none">0%</span>
+                            <span class="block text-[9px] uppercase tracking-wider text-slate-400 font-bold mt-0.5">Maturità</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Quote & Core Purpose Section -->
+    <section class="py-20 bg-gradient-to-tr from-brand-900 via-brand-850 to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-8 border border-white/20 shadow-inner">
+                <i class="fa-solid fa-quote-left text-2xl text-accent-400"></i>
+            </div>
+            
+            <blockquote class="text-2xl sm:text-3xl lg:text-4xl font-light italic leading-relaxed max-w-3xl mx-auto text-slate-100">
+                "Amministrare oggi significa gestire il presente; <br>
+                <span class="text-accent-400 font-bold not-italic bg-gradient-to-r from-accent-400 to-emerald-400 bg-clip-text text-transparent">valorizzare il contesto abitativo</span> significa costruire il futuro del condominio e rafforzare la fiducia di chi vi abita."
+            </blockquote>
+            
+            <div class="mt-8 border-t border-white/10 pt-6 max-w-md mx-auto">
+                <p class="font-bold text-lg text-white">GiOKri Life</p>
+                <p class="text-xs text-slate-400 uppercase tracking-widest mt-0.5">Creatori di Condominio+</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Matrix Section -->
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Un Percorso Vincente Per Tutti</h2>
+                <p class="text-slate-500 mt-3">Perché quando un condominio cresce, tutti ne traggono vantaggio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                <!-- For Condomini -->
+                <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-all duration-300">
+                    <div class="inline-flex items-center space-x-2 text-brand-600 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center">
+                            <i class="fa-solid fa-house-chimney-user"></i>
+                        </div>
+                        <span class="font-extrabold text-lg tracking-tight">I Condomini</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-brand-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-[10px]"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Sostenibilità reale e risparmio energetico tangibile in bolletta.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-brand-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-[10px]"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Maggiore sicurezza mediante coperture assicurative sempre aggiornate.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-brand-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-[10px]"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Incremento della percezione del valore del proprio immobile nel tempo.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- For Amministratore -->
+                <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-all duration-300">
+                    <div class="inline-flex items-center space-x-2 text-accent-600 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-accent-100 flex items-center justify-center">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <span class="font-extrabold text-lg tracking-tight">L'Amministratore</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-accent-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-[10px]"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Riconoscimento professionale elevato come manager proattivo e moderno.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-accent-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-[10px]"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Forte fidelizzazione e consolidamento del rapporto fiduciario con l'assemblea.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-5 h-5 rounded-full bg-accent-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-[10px]"></i>
+                            </div>
+                            <span class="text-slate-600 text-sm">Semplificazione della gestione quotidiana attraverso flussi moderni e organizzati.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Contact Form & Footer -->
+    <section class="bg-slate-900 text-white py-16 sm:py-20 border-t border-slate-800" id="contatti">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact info details -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-accent-400 font-bold uppercase tracking-widest text-xs">Entra in Contatto</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 tracking-tight">Parla Oggi di Condominio+</h2>
+                        <p class="text-slate-400 mt-4 leading-relaxed">
+                            Che tu sia un amministratore voglioso di innovare o un condomino desideroso di riqualificare la propria realtà abitativa, siamo pronti a fornirti il supporto necessario per avviare il cambiamento.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Phone -->
+                        <a href="tel:+393271160053" class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-500 transition-all group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-medium">Telefono / WhatsApp</span>
+                                <span class="text-base font-bold text-white tracking-wider">+39 327 1160053</span>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:giokrilife@gmail.com" class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-500 transition-all group">
+                            <div class="w-12 h-12 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-medium">Invia un'E-mail</span>
+                                <span class="text-base font-bold text-white tracking-wide">giokrilife@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <!-- Location -->
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                            <div class="w-12 h-12 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-medium">Sede Operativa</span>
+                                <span class="text-base font-bold text-white">Spresiano (TV), Italia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple simulated form for info requests -->
+                <div class="bg-white rounded-3xl p-8 text-slate-800 shadow-2xl relative">
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Invia una Richiesta Veloce</h3>
+                    <p class="text-xs text-slate-500 mb-6">Ti ricontatteremo il prima possibile per studiare le tue necessità.</p>
+                    
+                    <form onsubmit="handleRequestForm(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome o Ruolo</label>
+                            <input type="text" placeholder="Es. Mario Rossi (Amministratore / Condomino)" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Contatto Mail / Telefono</label>
+                            <input type="text" placeholder="Es. mario.rossi@email.it" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Messaggio o Domanda</label>
+                            <textarea rows="3" placeholder="Vorrei ricevere maggiori informazioni su Condominio+..." required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md shadow-brand-100 flex items-center justify-center space-x-2">
+                            <span>Invia Messaggio</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Form Success Message Placeholder -->
+                    <div id="form-success-alert" class="hidden absolute inset-0 bg-white rounded-3xl p-8 flex flex-col items-center justify-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900">Richiesta Ricevuta!</h4>
+                        <p class="text-xs text-slate-500 mt-2 max-w-xs">Grazie per l'interesse. Abbiamo preparato la mail precompilata pronta da inviare o ti ricontatteremo subito.</p>
+                        <button onclick="resetRequestForm()" class="mt-6 text-sm text-brand-600 font-bold hover:underline">Invia un altro messaggio</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom details -->
+            <div class="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>© 2026 GiOKri Life. Tutti i diritti riservati. Spresiano (TV), Italia</p>
+                <div class="flex space-x-4">
+                    <a href="#pilastri-section" class="hover:text-slate-300 transition-colors">I 4 Pilastri</a>
+                    <a href="#maturity-section" class="hover:text-slate-300 transition-colors">Test Condominio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Content Database for the 4 pillars interactive display
+        const pillarData = {
+            economico: {
+                badge: 'PILASTRO ECONOMICO',
+                title: 'Gestione Trasparente e Controllo Attivo dei Costi',
+                description: "Un bilancio condominiale non deve essere solo un foglio di calcolo, ma una radiografia chiara e leggibile dell'efficienza dell'edificio. Ottimizzare non significa tagliare i servizi, ma eliminare le inefficienze amministrative e rinegoziare i contratti di fornitura in modo strategico.",
+                bullets: [
+                    "Trasparenza contabile digitale accessibile 24/7.",
+                    "Audit periodico delle voci di spesa ricorrenti.",
+                    "Garanzia di pianificazione pluriennale per evitare spese impreviste."
+                ],
+                tagTitle: 'Cosa Ottieni',
+                box1_icon: 'fa-piggy-bank',
+                box1_color: 'emerald',
+                box1_title: 'Risparmio sul lungo periodo',
+                box1_desc: 'Sprechi ridotti al minimo e investimenti intelligenti che mantengono o aumentano il valore dell\'immobile.',
+                box2_icon: 'fa-magnifying-glass-chart',
+                box2_color: 'sky',
+                box2_title: 'Nessuna Sorpresa',
+                box2_desc: 'Tutte le informazioni, i contratti e le fatture sono tracciate e disponibili in tempo reale per tutti i condomini.'
+            },
+            energetico: {
+                badge: 'PILASTRO ENERGETICO',
+                title: 'Riduzione degli Sprechi e Transizione Sostenibile',
+                description: "Diminuire i consumi non è solo un dovere etico nei confronti dell'ambiente, ma rappresenta la via più diretta per abbattere le spese condominiali costanti. Dalla coibentazione intelligente all'uso di fonti rinnovabili, il futuro dell'energia è qui.",
+                bullets: [
+                    "Consulenza mirata per valutare l'integrazione di energia solare comune.",
+                    "Modernizzazione del sistema di illuminazione con sistemi LED auto-regolanti.",
+                    "Analisi termica dettagliata per individuare ponti termici e aree di dispersione calore."
+                ],
+                tagTitle: 'I Vantaggi Energetici',
+                box1_icon: 'fa-leaf',
+                box1_color: 'emerald',
+                box1_title: 'Impatto Ecologico Minimo',
+                box1_desc: 'Una forte impronta sostenibile che nobilita l\'immagine del fabbricato e protegge l\'ambiente.',
+                box2_icon: 'fa-gauge-high',
+                box2_color: 'orange',
+                box2_title: 'Riduzione Energetica immediata',
+                box2_desc: 'Sistemi efficientati si traducono immediatamente in un risparmio proporzionato sulla quota di riscaldamento.'
+            },
+            assicurativo: {
+                badge: 'PILASTRO ASSICURATIVO',
+                title: 'Massima Protezione del Patrimonio Comune',
+                description: "La sicurezza della comunità passa per una tutela impeccabile. Troppo spesso i condomini affrontano gravi problemi legati a sinistri non sufficientemente protetti. Una polizza accurata previene i conflitti e assicura sonni sereni.",
+                bullets: [
+                    "Analisi preventiva per azzerare il rischio di sottoassicurazione del valore dell'edificio.",
+                    "Processi fluidi di gestione sinistri con broker dedicati per risarcimenti rapidi.",
+                    "Polizze aggiornate per coprire anche i danni derivanti da calamità meteorologiche estreme."
+                ],
+                tagTitle: 'Incolumità e Valore',
+                box1_icon: 'fa-shield-halved',
+                box1_color: 'sky',
+                box1_title: 'Mantenimento del Valore',
+                box1_desc: 'Qualsiasi imprevisto o incidente coperto tempestivamente garantisce il mantenimento del decoro originario.',
+                box2_icon: 'fa-hand-holding-heart',
+                box2_color: 'purple',
+                box2_title: 'Serenità Assoluta',
+                box2_desc: 'Zero timori legati a rivalse o esborsi inattesi derivati da sinistri su aree comuni o private.'
+            },
+            sociale: {
+                badge: 'PILASTRO SOCIALE',
+                title: 'Vivere in Comunità nel Segno del Benessere',
+                description: "Il condominio non è solo una scatola di cemento, ma una micro-comunità. Agevolare l'interazione, digitalizzare l'amministrazione e offrire servizi moderni per i residenti trasforma radicalmente il clima sociale dell'edificio.",
+                bullets: [
+                    "Canali digitali agili per la segnalazione guasti in tempo reale.",
+                    "Iniziative collaborative tra vicini (es. acquisti solidali, spazi per la condivisione).",
+                    "Riduzione dei contrasti grazie a un'amministrazione proattiva e molto presente."
+                ],
+                tagTitle: 'Valore Comunitario',
+                box1_icon: 'fa-face-smile',
+                box1_color: 'amber',
+                box1_title: 'Benessere Abitativo Elevato',
+                box1_desc: 'L\'esperienza di vicinato diventa piacevole, riducendo le frizioni e lo stress quotidiano.',
+                box2_icon: 'fa-handshake',
+                box2_color: 'rose',
+                box2_title: 'Unità ed Organizzazione',
+                box2_desc: 'Una comunità forte e attenta rende il condominio ordinato e sicuro nel tempo.'
+            }
+        };
+
+        // Initialize display showing the economic pillar active
+        window.onload = function() {
+            selectPillar('economico');
+            calculateMaturity(); // init checklist state
+        };
+
+        // Function to display the active interactive pillar card details
+        function selectPillar(key) {
+            // Remove active style classes from all buttons
+            document.querySelectorAll('.pillar-btn').forEach(btn => {
+                btn.classList.remove('border-brand-500', 'bg-brand-50/50', 'border-accent-500', 'bg-accent-50/50', 'border-sky-500', 'bg-sky-50/50', 'border-rose-500', 'bg-rose-50/50');
+                btn.classList.add('border-slate-100', 'bg-slate-50');
+            });
+
+            // Set dynamic button visual state based on selection
+            const btn = document.getElementById(`btn-${key}`);
+            let ringColorClass = '';
+            if (key === 'economico') { btn.classList.add('border-brand-500', 'bg-brand-50/50'); }
+            if (key === 'energetico') { btn.classList.add('border-accent-500', 'bg-accent-50/50'); }
+            if (key === 'assicurativo') { btn.classList.add('border-sky-500', 'bg-sky-50/50'); }
+            if (key === 'sociale') { btn.classList.add('border-rose-500', 'bg-rose-50/50'); }
+
+            const data = pillarData[key];
+            const contentDisplay = document.getElementById('pillar-content-display');
+
+            // Build structural bullets block HTML
+            let bulletsHtml = '';
+            data.bullets.forEach(bullet => {
+                bulletsHtml += `
+                    <li class="flex items-center space-x-2 text-sm text-slate-200">
+                        <i class="fa-solid fa-circle-check text-accent-500"></i>
+                        <span>${bullet}</span>
+                    </li>
+                `;
+            });
+
+            // Get colors based on values
+            const colors = {
+                emerald: { bg: 'bg-emerald-500/20', text: 'text-emerald-400' },
+                sky: { bg: 'bg-sky-500/20', text: 'text-sky-400' },
+                orange: { bg: 'bg-orange-500/20', text: 'text-orange-400' },
+                purple: { bg: 'bg-purple-500/20', text: 'text-purple-400' },
+                amber: { bg: 'bg-amber-500/20', text: 'text-amber-400' },
+                rose: { bg: 'bg-rose-500/20', text: 'text-rose-400' }
+            };
+
+            const box1Color = colors[data.box1_color] || colors.sky;
+            const box2Color = colors[data.box2_color] || colors.sky;
+
+            // Render details safely into innerHTML of the display container
+            contentDisplay.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white/10 text-slate-200 border border-white/20">
+                            ${data.badge}
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                            ${data.title}
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            ${data.description}
+                        </p>
+                        <ul class="space-y-3">
+                            ${bulletsHtml}
+                        </ul>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 space-y-4">
+                        <h4 class="text-sm font-semibold text-brand-300 uppercase tracking-wider">${data.tagTitle}</h4>
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2.5 rounded-lg ${box1Color.bg} ${box1Color.text} mt-1">
+                                <i class="fa-solid ${data.box1_icon}"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-base">${data.box1_title}</h5>
+                                <p class="text-xs text-slate-300 mt-1">${data.box1_desc}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 border-t border-white/10 pt-4">
+                            <div class="p-2.5 rounded-lg ${box2Color.bg} ${box2Color.text} mt-1">
+                                <i class="fa-solid ${data.box2_icon}"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-base">${data.box2_title}</h5>
+                                <p class="text-xs text-slate-300 mt-1">${data.box2_desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Logic to calculate interactive condominium maturity score
+        function calculateMaturity() {
+            let totalScore = 0;
+            const checkboxes = document.querySelectorAll('.condo-checkbox');
+            
+            checkboxes.forEach(box => {
+                if (box.checked) {
+                    totalScore += parseInt(box.value);
+                }
+            });
+
+            // Update percentage and circle indicator
+            document.getElementById('score-percentage').innerText = `${totalScore}%`;
+            
+            // Circumference of our progress circle is 2 * Math.PI * r (2 * 3.14159 * 48 ~ 301.6)
+            const circumference = 301.6;
+            const offset = circumference - (totalScore / 100) * circumference;
+            document.getElementById('progress-circle').setAttribute('stroke-dashoffset', offset);
+
+            // Dynamically change circular progress color based on rating score
+            const progressCircle = document.getElementById('progress-circle');
+            if (totalScore <= 20) {
+                progressCircle.setAttribute('stroke', '#ef4444'); // Red
+                document.getElementById('score-description').innerText = "Stato base. Il condominio gestisce solo l'ordinario senza una reale tutela preventiva.";
+            } else if (totalScore <= 60) {
+                progressCircle.setAttribute('stroke', '#eab308'); // Amber
+                document.getElementById('score-description').innerText = "Buona base, ma c'è spazio per migliorare su aspetti chiave energetici e sociali.";
+            } else if (totalScore <= 80) {
+                progressCircle.setAttribute('stroke', '#3b82f6'); // Blue
+                document.getElementById('score-description').innerText = "Condominio virtuoso! Si stanno adottando buone pratiche di sviluppo e valorizzazione.";
+            } else {
+                progressCircle.setAttribute('stroke', '#10b981'); // Emerald
+                document.getElementById('score-description').innerText = "Eccellente! Un esempio luminoso di maturità immobiliare, sostenibilità e comunità unita.";
+            }
+        }
+
+        // Handle Quick Contact simulated form submitting
+        function handleRequestForm(event) {
+            event.preventDefault();
+            // Display clean custom overlay alert instead of dangerous 'alert' functions
+            document.getElementById('form-success-alert').classList.remove('hidden');
+        }
+
+        // Reset state of form
+        function resetRequestForm() {
+            document.getElementById('form-success-alert').classList.add('hidden');
+            document.querySelector('form').reset();
+        }
+    </script>
+</body>
+</html>
