@@ -55,6 +55,9 @@
         }
     </script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
@@ -512,15 +515,15 @@
                     <form onsubmit="handleRequestForm(event)" class="space-y-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome o Ruolo</label>
-                            <input type="text" placeholder="Es. Mario Rossi (Amministratore / Condomino)" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                            <input type="text" id="contact-name" placeholder="Es. Mario Rossi (Amministratore / Condomino)" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Contatto Mail / Telefono</label>
-                            <input type="text" placeholder="Es. mario.rossi@email.it" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                            <input type="text" id="contact-channel" placeholder="Es. mario.rossi@email.it" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Messaggio o Domanda</label>
-                            <textarea rows="3" placeholder="Vorrei ricevere maggiori informazioni su Condominio+..." required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"></textarea>
+                            <textarea rows="3" id="contact-message" placeholder="Vorrei ricevere maggiori informazioni su Condominio+..." required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md shadow-brand-100 flex items-center justify-center space-x-2">
                             <span>Invia Messaggio</span>
@@ -762,6 +765,28 @@
         // Handle Quick Contact simulated form submitting
         function handleRequestForm(event) {
             event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('contact-name').value;
+            const channel = document.getElementById('contact-channel').value;
+            const message = document.getElementById('contact-message').value;
+
+            // Prepare prefilled email contents
+            const emailTo = "giokrilife@gmail.com";
+            const subject = encodeURIComponent("Richiesta Info - Condominio+");
+            const body = encodeURIComponent(
+                `Salve GiOKri Life,\n\n` +
+                `Desidero ricevere informazioni sul progetto Condominio+.\n\n` +
+                `Dettagli mittente:\n` +
+                `- Nome/Ruolo: ${name}\n` +
+                `- Recapito: ${channel}\n\n` +
+                `Messaggio:\n${message}\n\n` +
+                `--- \nInviato tramite l'Infografica Interattiva Condominio+`
+            );
+
+            // Open default email client with variables prefilled
+            window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+
             // Display clean custom overlay alert instead of dangerous 'alert' functions
             document.getElementById('form-success-alert').classList.remove('hidden');
         }
